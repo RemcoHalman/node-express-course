@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+const port = 3000;
+
 app.use(bodyParser.json());
 
 const mockUserData = [{ name: "Mark" }, { name: "Jill" }];
@@ -46,6 +48,6 @@ app.post("/login", function (req, res) {
   }
 });
 
-app.listen(8000, function () {
-  console.log("server running");
+app.listen(port, function () {
+  console.log(`server running at http://localhost:${port}`);
 });
